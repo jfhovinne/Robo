@@ -117,7 +117,7 @@ class Run extends Base
     /**
      * @return $this
      */
-    public function interactive()
+    public function interactive($interactive)
     {
         $this->option('-i');
         return $this;
@@ -148,15 +148,17 @@ class Run extends Base
     }
 
     /**
+     * @param array env
      * @param string $variable
      * @param null|string $value
      *
      * @return $this
      */
-    public function env($variable, $value = null)
+    public function env($env, $variable = null, $value = null)
     {
-        $env = $value ? "$variable=$value" : $variable;
-        return $this->option("-e", $env);
+        // @todo Fix parameters, see ExecTrait
+        $e = $value ? "$variable=$value" : $variable;
+        return $this->option("-e", $e);
     }
 
     /**
