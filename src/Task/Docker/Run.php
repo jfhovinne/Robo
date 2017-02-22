@@ -154,7 +154,7 @@ class Run extends Base
      *
      * @return $this
      */
-    public function env($env, $variable = null, $value = null)
+    public function env(array $env, $variable = null, $value = null)
     {
         // @todo Fix parameters, see ExecTrait
         $e = $value ? "$variable=$value" : $variable;
